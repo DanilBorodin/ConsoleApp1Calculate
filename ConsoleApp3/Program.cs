@@ -8,7 +8,11 @@
             char sign;
             Console.WriteLine("Введите первое число, а затем знак действия (только +)");
             Console.Write("Первое число - ");
-            one = Convert.ToSingle(Console.ReadLine());
+            while (Single.TryParse(Console.ReadLine(), out one) == false)
+            {
+                Console.WriteLine("Введите корректное значение");
+                Console.Write("Первое число - ");
+            }
             Console.Write("Введите знак действия : ");
             sign = Convert.ToChar(Console.ReadLine());
             Console.Write("Второе число - ");
