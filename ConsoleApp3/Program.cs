@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             float one, two, result;
             char sign;
@@ -24,9 +24,13 @@
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
                 Console.ReadKey();
             }
-            
-
+            else if (sign == '*')
+            {
+                result = one * two;
+                Console.WriteLine("Умножение ваших чисел равна " + result);
+                Console.WriteLine("Для выхода нажмите любую клавишу...");
+                Console.ReadKey();
+            }
         }
-
     }
 }
