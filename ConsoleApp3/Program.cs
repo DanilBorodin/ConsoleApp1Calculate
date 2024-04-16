@@ -5,39 +5,46 @@
         private static void Main(string[] args)
         {
             decimal one, two, result;
-            char sign;
-            Console.WriteLine("Введите первое число, а затем знак действия (только +)");
+            string sign;
+            Console.WriteLine("Введите первое число, а затем знак действия (только + или *)");
+            
             Console.Write("Первое число - ");
-            while (Decimal.TryParse(Console.ReadLine(), out one) == false)
+            while (!Decimal.TryParse(Console.ReadLine(), out one))
             {
                 Console.WriteLine("Введите корректное значение");
                 Console.Write("Первое число - ");
             }
-            Console.Write("Введите знак действия: ");
+
+            Console.Write("Введите знак действия:");
+            sign = Console.ReadLine();
+            while (sign != "+" && sign != "*")
+            {
+                Console.WriteLine("Введите корректный знак");
+                Console.Write("Введите знак - ");
+                sign = Console.ReadLine();
+
+            }
+
             Console.Write("Второе число - ");
-            while (Decimal.TryParse(Console.ReadLine(), out two) == false)
+            while (!Decimal.TryParse(Console.ReadLine(), out two))
             {
                 Console.WriteLine("Введите корректное значение");
                 Console.Write("Второе число - ");
             }
-            if (sign == '+')
+
+            if (sign == "+")
             {
                 result = one + two;
                 Console.WriteLine("Сумма ваших чисел равна " + result);
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
                 Console.ReadKey();
             }
-            else if (sign == '*')
+            else if (sign == "*")
             {
                 result = one * two;
                 Console.WriteLine("Умножение ваших чисел равна " + result);
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
                 Console.ReadKey();
-                if (sign != '+');
-                {
-                    Console.WriteLine("Введите корректный знак");
-                    Console.ReadKey();
-                }
             }
         }
     }
