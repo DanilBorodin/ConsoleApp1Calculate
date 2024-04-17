@@ -6,8 +6,7 @@
         {
             decimal one, two, result;
             string sign;
-            Console.WriteLine("Введите первое число, а затем знак действия (только + или *)");
-            
+            Console.WriteLine("Введите первое число, а затем знак действия (только + или *)");          
             Console.Write("Первое число - ");
             while (!Decimal.TryParse(Console.ReadLine(), out one))
             {
@@ -17,7 +16,7 @@
 
             Console.Write("Введите знак действия:");
             sign = Console.ReadLine();
-            while (sign != "+" && sign != "*")
+            while (sign != "+" && sign != "*" && sign != "/" && sign != "-")
             {
                 Console.WriteLine("Введите корректный знак");
                 Console.Write("Введите знак - ");
@@ -46,6 +45,27 @@
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
                 Console.ReadKey();
             }
-        }
+            else if (sign == "-")
+            {
+                result = one - two;
+                Console.WriteLine("Вычитание ваших чисел равна " + result);
+                Console.WriteLine("Для выхода нажмите любую клавишу...");
+                Console.ReadKey();
+            }
+            
+            else if (sign == "/")
+            {
+                    result = one / two;
+                    Console.WriteLine("Деление ваших чисел равна " + result);
+                    Console.WriteLine("Для выхода нажмите любую клавишу...");
+                    Console.ReadKey();
+            while (two ==0)
+                {
+                    Console.WriteLine("Деление на 0 запрещено...");
+                    Console.WriteLine("Введите другое число");
+                    Console.ReadKey();
+                }
+            }
+        }   
     }
 }
