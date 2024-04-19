@@ -43,28 +43,26 @@
                 result = one * two;
                 Console.WriteLine("Умножение ваших чисел равна " + result);
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
-                Console.ReadKey();
             }
             else if (sign == "-")
             {
                 result = one - two;
                 Console.WriteLine("Вычитание ваших чисел равна " + result);
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
-                Console.ReadKey();
             }
-            
+
             else if (sign == "/")
             {
+                while (two ==0)
+                {
+                    Console.WriteLine("Деление на 0 запрещено...");
+                    Console.WriteLine("Введите другое число");
+                    break;
+                }
                     result = one / two;
                     Console.WriteLine("Деление ваших чисел равна " + result);
                     Console.WriteLine("Для выхода нажмите любую клавишу...");
                     Console.ReadKey();
-            while (two ==0)
-                {
-                    Console.WriteLine("Деление на 0 запрещено...");
-                    Console.WriteLine("Введите другое число");
-                    Console.ReadKey();
-                }
             }
         }   
     }
