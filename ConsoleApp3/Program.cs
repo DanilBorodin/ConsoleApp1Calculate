@@ -6,7 +6,7 @@
         {
             decimal one, two, result;
             string sign;
-            Console.WriteLine("Введите первое число, а затем знак действия (только + или *)");          
+            Console.WriteLine("Введите первое число, а затем знак действия (+,-,*,/)");
             Console.Write("Первое число - ");
             while (!Decimal.TryParse(Console.ReadLine(), out one))
             {
@@ -36,7 +36,7 @@
                 result = one + two;
                 Console.WriteLine("Сумма ваших чисел равна " + result);
                 Console.WriteLine("Для выхода нажмите любую клавишу...");
-                Console.ReadKey();
+
             }
             else if (sign == "*")
             {
@@ -53,17 +53,23 @@
 
             else if (sign == "/")
             {
-                while (two ==0)
+                while (two == 0)
                 {
-                    Console.WriteLine("Деление на 0 запрещено...");
-                    Console.WriteLine("Введите другое число");
                     break;
+                    Console.Write("Деление на 0 запрещено...");
                 }
+                    Console.WriteLine("Введите другое число");
+                    Console.ReadLine();
+
+                if (two != 0)
+                {
                     result = one / two;
                     Console.WriteLine("Деление ваших чисел равна " + result);
                     Console.WriteLine("Для выхода нажмите любую клавишу...");
-                    Console.ReadKey();
+                }
             }
-        }   
+                Console.ReadKey();
+        }     
+         
     }
 }
