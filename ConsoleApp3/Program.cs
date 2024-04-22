@@ -55,19 +55,15 @@
             {
                 while (two == 0)
                 {
-                    break;
-                    Console.Write("Деление на 0 запрещено...");
+                     Console.WriteLine("Деление на 0 запрещено...");
+                     Console.Write ("Введите второе число -");   
+                     Convert.ToDecimal(Console.ReadLine());
                 }
-                    Console.WriteLine("Введите другое число");
-                    Console.ReadLine();
-
-                if (two != 0)
-                {
-                    result = one / two;
-                    Console.WriteLine("Деление ваших чисел равна " + result);
-                    Console.WriteLine("Для выхода нажмите любую клавишу...");
-                }
+                result = one / two;
+                Console.WriteLine("Деление ваших чисел равна " + result);
+                Console.WriteLine("Для выхода нажмите любую клавишу...");
             }
+
                 Console.ReadKey();
         }     
          
