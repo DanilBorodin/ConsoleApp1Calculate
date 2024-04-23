@@ -56,8 +56,8 @@
                 while (two == 0)
                 {
                      Console.WriteLine("Деление на 0 запрещено...");
-                     Console.Write ("Введите второе число -");   
-                     Convert.ToDecimal(Console.ReadLine());
+                     Console.Write ("Введите второе число - "); 
+                     two = Convert.ToDecimal(Console.ReadLine());
                 }
                 result = one / two;
                 Console.WriteLine("Деление ваших чисел равна " + result);
